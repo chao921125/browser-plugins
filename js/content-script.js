@@ -58,7 +58,9 @@ function setBtn() {
             }
         })*/
 
-        sendMessageToBackground('111')
+        requestServer('111').then(resp => {
+            console.log(resp)
+        })
     })
     document.getElementsByClassName('realtime-filter')[0].append(btn);
 }
@@ -66,10 +68,12 @@ function setBtn() {
 function ckBtn() {
     return document.getElementsByClassName('p-getBtn').length > 0;
 }
-
-async function sendMessageToBackground(message) {
+async function requestServer (message) {
+    return await sendMessageToBackground(message)
+}
+function sendMessageToBackground(message) {
     return new Promise((resolve) => {
-        chrome.runtime.sendMessage({greeting: message || '你好，我是content-script呀，我主动发消息给后台！'}, function(response) {
+        chrome.runtime.sendMessage({message}, function(response) {
             console.log('收到来自后台的回复 = ' + response);
             resolve(response);
         })
