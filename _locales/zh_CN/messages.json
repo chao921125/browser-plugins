@@ -1,0 +1,29 @@
+{
+	"check_proxy_config_body": {
+		"message": "\u003Cp class=\"alert alert-danger\"> 请检查您的浏览器扩展管理,停用其它代理插件.\u003Ca href=\"check.html\" class=\"btn btn-warning\">点击查看\u003C/a>\u003C/p>"
+	},
+	"check_proxy_config_title": {
+		"message": "注意:浏览器代理被其它扩展程序控制."
+	},
+	"copyright": {
+		"message": "googlehelper.net"
+	},
+	"description": {
+		"message": "解决chrome扩展无法自动更新"
+	},
+	"error_button": {
+		"message": "点击这里"
+	},
+	"error_code": {
+		"message": "错误代码"
+	},
+	"error_network": {
+		"message": "无法连接到我们的数据中心."
+	},
+	"name": {
+		"message": "谷歌插件DEMO"
+	},
+	"url_domain": {
+		"message": "111111"
+	}
+}

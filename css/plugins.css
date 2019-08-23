@@ -1,0 +1,30 @@
+.p-popup {
+    width: 280px;
+    height: 250px;
+    padding: 30px 10px;
+}
+.p-popup .control-label {
+    margin-top: 7px;
+}
+.p-form {
+    display: block;
+}
+.p-success {
+    display: none;
+}
+.p-error {
+    display: none;
+}
+
+.p-getBtn {
+    width: 128px;
+    height: 32px;
+    background: #fff;
+    color: #0f0f0f;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}

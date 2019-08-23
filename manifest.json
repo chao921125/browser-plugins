@@ -1,0 +1,55 @@
+{
+	"manifest_version": 2,
+	"name": "__MSG_name__",
+	"version": "1.0",
+
+	"default_locale": "zh_CN",
+	"description": "__MSG_description__",
+	"icons": {
+		"16": "img/icon16.png",
+		"32": "img/icon32.png",
+		"48": "img/icon48.png",
+		"128": "img/icon128.png"
+	},
+
+	"browser_action": {
+		"default_icon": {
+			"16": "img/icon16.png",
+			"32": "img/icon32.png",
+			"48": "img/icon48.png",
+			"128": "img/icon128.png"
+		},
+		"default_title": "__MSG_name__",
+		"default_popup": "popup.html"
+	},
+
+	"background": {
+		"persistent": true,
+		"page": "background.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://*.taobao.com/*","https://*.tmall.com/*"],
+			"js": ["js/jquery-1.12.4.js", "js/content-script.js"],
+			"css": ["css/plugins.css"],
+			"run_at": "document_start"
+		}
+	],
+	"homepage_url": "https://zj.rongchi.tech/Login",
+	"permissions": [
+		"cookies",
+		"tabs",
+		"activeTab",
+		"storage",
+		"webRequest",
+		"webRequestBlocking",
+		"http://*/*",
+		"https://*/*"
+	],
+	"minimum_chrome_version": "22.0.0",
+	"web_accessible_resources": [
+		"js/*",
+		"css/*",
+		"img/*"
+	]
+}
