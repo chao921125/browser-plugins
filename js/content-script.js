@@ -5,20 +5,19 @@
         injectDmp();
     });*/
     let initHtml = setInterval(function () {
-        if (document.getElementsByClassName('realtime-filter').length > 0) {
+
+        if (document.getElementsByClassName('s_l').length > 0) {
             ckBtn() ? blackFn() : setBtn()
         }
     }, 2000);
     let ckHtml = setTimeout(function () {
-        if (!ckBtn()) {
+        if (ckBtn()) {
             clearInterval(initHtml);
             clearTimeout(ckHtml);
-        } else {
-            ckHtml;
         }
-    }, 120000);
+    }, 2000);
 
-    getMessageForBackground();
+    // getMessageForBackground();
 })();
 
 function blackFn() {
@@ -27,42 +26,26 @@ function blackFn() {
 
 // 模拟绑定事件
 function setBtn() {
-    document.cookie
+    console.log(333333)
     let btn = document.createElement('button');
     btn.setAttribute('class', 'p-getBtn');
-    btn.innerHTML  = '测试调用后端数据';
+    btn.innerHTML  = '获取code以及对应编码';
     btn.addEventListener('click', function () {
-        /*let formData = new FormData()
-        // formData.append('_tb_token_', 'y43APMpNl7zA24')
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://zhaoshang.tmall.com/tmallwork/shopManage.do?_tb_token_='+getCookie('_tb_token_'), false)
-        xhr.onload = function(e) {
-            if(this.status === 200||this.status === 304){
-                alert(this.responseText);
+        let str = "IDESPJLGNG";
+        let num = 0;
+        let bianhao = str + num;
+        setTimeout(function () {
+            num = Math.floor(Math.random()*100000);
+            if (num !== 485554) {
+                bianhao = str + num;
+                getCode(bianhao);
             }
-        };
-        xhr.send(formData)*/
-
-        // 'https://subway.simba.taobao.com/bpenv/getLoginUserInfo.htm'
-        /*$.ajax({
-            type: 'POST',
-            dateType: 'JSON',
-            url: 'https://subway.simba.taobao.com/bpenv/getLoginUserInfo.htm',
-            headers: {'Content-Type': 'application/json;charset=UTF-8'},
-            success: function (data) {
-                alert('success' + data.result.outsideNumID + sendMessageToBackground(data.result.outsideNumID));
-                alert('success' + JSON.stringify(data));
-            },
-            error: function (data) {
-                alert('error' + JSON.stringify(data));
-            }
-        })*/
-
-        requestServer('111').then(resp => {
+        },2000)
+        /*requestServer('111').then(resp => {
             console.log(resp)
-        })
+        })*/
     })
-    document.getElementsByClassName('realtime-filter')[0].append(btn);
+    document.getElementsByClassName('s_l')[0].append(btn);
 }
 
 function ckBtn() {
@@ -119,3 +102,32 @@ function getCookie(name) {
         return null;
 }
 
+function getCode (bianhao) {
+    const posturl = "http://pc.xz.cn/index.php?ac=ajax_checkCode";
+    const is_domain = 0;
+    $.ajax({
+        type: "get",
+        url:posturl,
+        data: "bianhao=" + bianhao + "&yzm=" + undefined + "&is_domain=" + is_domain,
+        beforeSend: function(XMLHttpRequest){
+            //
+        },
+        success: function(data, textStatus){
+            if (data.toString().includes('返回重查')) {
+                return false;
+            } else {
+                console.log(bianhao);
+                console.log(data);
+                console.log("br");
+                return true;
+            }
+        },
+        complete: function(XMLHttpRequest, textStatus){
+            //
+        },
+        error: function(){
+            alert(error4);
+            return false;
+        }
+    });
+}

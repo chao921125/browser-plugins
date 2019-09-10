@@ -29,13 +29,13 @@
 	},
 	"content_scripts": [
 		{
-			"matches": ["https://*.taobao.com/*","https://*.tmall.com/*"],
+			"matches": ["https://pc.xz.cn/","http://pc.xz.cn/"],
 			"js": ["js/jquery-1.12.4.js", "js/content-script.js"],
 			"css": ["css/plugins.css"],
 			"run_at": "document_start"
 		}
 	],
-	"homepage_url": "https://zj.rongchi.tech/Login",
+	"homepage_url": "https://www.baidu.com/",
 	"permissions": [
 		"cookies",
 		"tabs",
