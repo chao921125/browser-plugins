@@ -1,2 +1,0 @@
-# browser-plugins
-chrome extensions
