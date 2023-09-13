@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript + Vite 浏览器插件开发
 ```shell
 pnpm dev
 
