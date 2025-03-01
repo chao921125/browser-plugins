@@ -1,5 +1,3 @@
-.DS_Store
-.idea/
 .vite-ssg-dist
 .vite-ssg-temp
 *.crx
@@ -15,3 +13,14 @@ node_modules
 src/auto-imports.d.ts
 src/components.d.ts
 .eslintcache
+
+# Editor directories
+.DS_Store
+.hbuilderx
+.vscode/*
+!.vscode/extensions.json
+.idea
+.vscode
+.project
+.cache
+.local
