@@ -1,0 +1,3 @@
+onlyBuiltDependencies:
+  - dtrace-provider
+  - spawn-sync

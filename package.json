@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview",
+    "build": "node scripts/manifest.mjs && vite build",
+    "build:chrome": "npm run build && node scripts/build-chrome.mjs",
+    "build:firefox": "npm run build && node scripts/build-firefox.mjs",
+    "dev": "vite --port 3000",
     "lint:prettier": "prettier --write --fix --loglevel warn \"./**/*.{js,ts,mjs,mts,cjs,cts,json,jsx,tsx,css,less,scss,vue,html}\""
   },
   "dependencies": {
@@ -25,7 +26,9 @@
     "stylelint-prettier": "^5.0.3",
     "typescript": "~5.8.3",
     "vite": "^6.3.2",
+    "vite-plugin-web-extension": "^4.4.3",
     "vue-tsc": "^2.2.8",
+    "web-ext": "^8.5.0",
     "webextension-polyfill": "^0.12.0"
   }
 }

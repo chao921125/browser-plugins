@@ -13,9 +13,8 @@ pnpm pack
 |---------------------------------------------------------------|
 | https://18055975947.github.io/extension/teach/vue-chrome.html |
 | https://github.com/antfu/vitesse-webext                       |
-| https://github.com/xiaoluoboding/chrome-ext-mv3-starter       |
 | https://github.com/mubaidr/vite-vue3-chrome-extension-v3      |
-| React https://github.com/crimx/ext-saladict                   |
+| https://github.com/xiaoluoboding/chrome-ext-mv3-starter       |
 
 | 插件                                     |
 |----------------------------------------|
